@@ -13,16 +13,16 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group = 'com.polianskyi.sboot'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
+jar {
+	baseName = 'spring-boot-practic'
+	version = '0.1'
+}
 
 repositories {
-	mavenCentral()
+	jcenter()
 	maven { url "https://repo.spring.io/snapshot" }
 	maven { url "https://repo.spring.io/milestone" }
 }
@@ -30,6 +30,7 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
